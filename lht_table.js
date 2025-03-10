@@ -12,7 +12,9 @@
 */
 
 var thisDay = new Date("August 30, 2018");
-var tableHTML = "<table id='eventTable'><caption>Upcoming Events</caption><tr><th>Date</th><th>Event</th><th>Price</th></tr>";
+var tableHTML = "<table id='eventTable'>" + 
+"<caption>Upcoming Events</caption>" + "<tr>" + 
+"<th>Date</th>" + "<th>Event</th>" + "<th>Price</th>" + "</tr>";
 var endDate = new Date(thisDay.getTime()+14*24*60*60*1000);
 
 /* Create event dates for 14 days after the initial date */
@@ -23,7 +25,11 @@ for (var i = 0; i < eventDates.length; i++) {
 
    // Test whether the current day is in between the specified time
    if (thisDay <= eventDate && eventDate <= endDate) {
-      tableHTML += "<tr><td>" + eventDay + " @ " + eventTime + "</td><td>" + eventDescriptions[i] + "</td><td>" + eventPrices[i] + "</td></tr>";
+      tableHTML += "<tr>" + 
+      "<td>" + eventDay + " @ " + eventTime + "</td>" +
+      "<td>" + eventDescriptions[i] + "</td>" + 
+      "<td>" + eventPrices[i] + "</td>" +
+      "</tr>";
    }
 
 }
